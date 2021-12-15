@@ -9,9 +9,9 @@ int totalRejected = 0;
 	}
 
 	public void countIn(int in) {
-	if (!callCheck() && in > peekaboo())
+		if (!callCheck() && in > peekaboo()) //Był źle sformatowany
 			totalRejected++;
-			else
-				super.countIn(in);
+		else	//Był źle sformatowany
+			super.countIn(in);	//Był źle sformatowany
 	}
 }
