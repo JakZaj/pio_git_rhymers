@@ -8,29 +8,38 @@ public class DefaultCountingOutRhymer {
     public static final int IF_FULL = CAPACITY - 1;
     private final int[] numbers = new int[CAPACITY];
 
-    public int total = EMPTY_RHYMER_INDICATOR;
+    private int total = EMPTY_RHYMER_INDICATOR;
+
+    public int getTotal() {
+        return total;
+    }
+
     public void countIn(int in) {
         if (!isFull())
-            numbers[++total] = in;
+            numbers[setTotal(getTotal() + 1)] = in;
     }
 
     public boolean callCheck() {
-        return total == EMPTY_RHYMER_INDICATOR;
+        return getTotal() == EMPTY_RHYMER_INDICATOR;
     }
 
     public boolean isFull() {
-        return total == IF_FULL;
+        return getTotal() == IF_FULL;
     }
 
     protected int peekaboo() {
         if (callCheck())
             return DEFAULT_VALUE;
-        return numbers[total];
+        return numbers[getTotal()];
     }
     public int countOut() {
         if (callCheck())
             return DEFAULT_VALUE;
-        return numbers[total--];
+        return numbers[setTotal(getTotal() - 1)+1];
     }
 
+    public int setTotal(int total) {
+        this.total = total;
+        return  total;
+    }
 }
