@@ -29,14 +29,14 @@ public class IntArrayStack implements IntArrayLinkedHierarchy{
 
     @Override
     public int top() {
-        if (callCheck())
+        if (isEmpty())
             return DEFAULT_VALUE;
         return numbers[getTotal()];
     }
 
     @Override
     public int pop() {
-        if (callCheck())
+        if (isEmpty())
             return DEFAULT_VALUE;
         return numbers[setTotal(getTotal() - 1)+1];
     }
@@ -45,25 +45,25 @@ public class IntArrayStack implements IntArrayLinkedHierarchy{
         return total;
     }
 
-    public void countIn(int in) {
-        if (!isFull())
-            numbers[setTotal(getTotal() + 1)] = in;
-    }
+//    public void countIn(int in) {
+//        if (!isFull())
+//            numbers[setTotal(getTotal() + 1)] = in;
+//    }
 
-    public boolean callCheck() {
-        return getTotal() == EMPTY_RHYMER_INDICATOR;
-    }
-
-    public int peekaboo() {
-        if (callCheck())
-            return DEFAULT_VALUE;
-        return numbers[getTotal()];
-    }
-    public int countOut() {
-        if (callCheck())
-            return DEFAULT_VALUE;
-        return numbers[setTotal(getTotal() - 1)+1];
-    }
+//    public boolean callCheck() {
+//        return getTotal() == EMPTY_RHYMER_INDICATOR;
+//    }
+//
+//    public int peekaboo() {
+//        if (callCheck())
+//            return DEFAULT_VALUE;
+//        return numbers[getTotal()];
+//    }
+//    public int countOut() {
+//        if (callCheck())
+//            return DEFAULT_VALUE;
+//        return numbers[setTotal(getTotal() - 1)+1];
+//    }
 
     public int setTotal(int total) {
         this.total = total;

@@ -1,21 +1,27 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.bridgeStandard.IntArrayLinkedHierarchy;
 import edu.kis.vh.nursery.bridgeStandard.IntArrayStack;
+import edu.kis.vh.nursery.bridgeStandard.IntLinkedList;
 
 public class DefaultCountingOutRhymer {
-    private IntArrayStack intArrayStack;
+    private IntArrayLinkedHierarchy intArrayStack=new IntArrayStack();
+
+    public DefaultCountingOutRhymer() {
+    }
 
     public DefaultCountingOutRhymer(IntArrayStack intArrayStack) {
         this.intArrayStack = intArrayStack;
     }
 
-    public DefaultCountingOutRhymer() {
-        this.intArrayStack = new IntArrayStack();
+    public DefaultCountingOutRhymer(IntLinkedList intLinkedList) {
+        this.intArrayStack = intLinkedList;
     }
 
-    public int getTotal() {
-        return intArrayStack.getTotal();
-    }
+
+//    public int getTotal() {
+//        return intArrayStack.getTotal();
+//    }
 
     public void countIn(int in) {
         intArrayStack.push(in);
